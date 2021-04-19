@@ -26,7 +26,7 @@
 		<main class="px-3">
 		<h1>User Registration Application</h1>
 		<p class="lead">
-			URA is a simple Spring Boot application to regiter users in a
+			URA is a simple Spring Boot application to register users in a
 			Relational Database. <br>URA uses MySQL, Hibernate and JSP. It
 			also accomplishes basic CRUD operations.
 		</p>

@@ -59,12 +59,38 @@ public class UserController {
 
 		return "user-form";
 	}
-	
+
 	@GetMapping("/deleteUser")
 	public String deleteUser(@RequestParam("userId") int userId) {
 
 		userserv.delete(userId);
 
 		return "redirect:/user/list";
+	}
+
+	@GetMapping("/search")
+	public String searchUsers(@RequestParam("searchWord") String searchWord, @RequestParam("option") String option,
+			Model model) {
+
+		switch (option) {
+		case "First Name":
+			model.addAttribute("usersList", userserv.findByName(searchWord));
+			break;
+		case "Last Name":
+			model.addAttribute("usersList", userserv.findByLastName(searchWord));
+			break;
+		case "email":
+			model.addAttribute("usersList", userserv.findByEmail(searchWord));
+			break;
+		case "Phone number":
+			model.addAttribute("usersList", userserv.findByPhone(searchWord));
+			break;
+		case "Address":
+			break;
+		default:
+			break;
+		}
+
+		return "list-users";
 	}
 }

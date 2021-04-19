@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html lang="en">
 <head>
 <link
@@ -19,12 +20,23 @@
 			<h3 class="float-md-start mb-0">URA</h3>
 			<nav class="nav nav-masthead justify-content-center float-md-end">
 			<a class="nav-link " aria-current="page" href="/">Home</a> <a
-				class="nav-link active" href="#">Users</a> </nav>
+				class="nav-link active" href="/user/list">Users</a> </nav>
 		</div>
 		</header>
 
 		<main class="px-3">
 		<h1>Registered Users</h1>
+		<form:form action="search" method="get">
+                Search user: <input type="text" name="searchWord" />
+			<select name="option">
+				<option>First Name</option>
+				<option>Last Name</option>
+				<option>email</option>
+				<option>Phone number</option>
+				<option>Address</option>
+			</select>
+			<input type="submit" value="Search" class="add-button" />
+		</form:form>
 		<table class="table">
 			<thead>
 				<tr>
