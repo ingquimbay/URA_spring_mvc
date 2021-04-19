@@ -26,17 +26,28 @@
 
 		<main class="px-3">
 		<h1>Registered Users</h1>
-		<form:form action="search" method="get">
-                Search user: <input type="text" name="searchWord" />
-			<select name="option">
-				<option>First Name</option>
-				<option>Last Name</option>
-				<option>email</option>
-				<option>Phone number</option>
-				<option>Address</option>
-			</select>
-			<input type="submit" value="Search" class="add-button" />
-		</form:form>
+		<div class="container">
+			<form:form class="row g-3" action="search" method="get">
+				<div class="col-auto">
+					<label>Search user: </label>
+				</div>
+				<div class="col-auto">
+					<input type="text" class="form-control" name="searchWord" />
+				</div>
+				<div class="col-auto">
+					<select class="form-select" name="option">
+						<option>First Name</option>
+						<option>Last Name</option>
+						<option>email</option>
+						<option>Phone number</option>
+						<option>Address</option>
+					</select>
+				</div>
+				<div class="col-auto">
+					<input type="submit" value="Search" class="btn btn-primary" />
+				</div>
+			</form:form>
+		</div>
 		<table class="table">
 			<thead>
 				<tr>
