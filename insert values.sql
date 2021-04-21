@@ -13,3 +13,9 @@ VALUES
 	('Gabriel','Garcia','ggarcia@macondo.com','214-771-3997',3),
     ('Mary','Cassatt','mcassatt@gmail.com','930-932-3378',4),
     ('Judy','Garland','jgarland@oz.com','515-590-0495',5);
+    
+INSERT INTO access (username, password, authority, active)
+VALUES
+	('thomas','{noop}Welcome123','ROLE_USER',1),
+    ('marie','{noop}Welcome123','ROLE_USER',1),
+    ('diana','{noop}Access123','ROLE_ADMIN',1);

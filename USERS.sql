@@ -50,6 +50,19 @@ CREATE TABLE IF NOT EXISTS `Users`.`USER` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `Users`.`ACCESS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Users`.`ACCESS` (
+  `username` VARCHAR(20) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `authority` VARCHAR(45) NULL,
+  `active` TINYINT NULL,
+  PRIMARY KEY (`username`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
